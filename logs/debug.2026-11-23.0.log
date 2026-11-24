@@ -1,0 +1,668 @@
+2026-11-23 21:50:48,376 INFO (Version.java:21)- HV000001: Hibernate Validator 8.0.1.Final
+2026-11-23 21:50:48,674 INFO (StartupInfoLogger.java:50)- Starting NovelStudyApplication v3.5.1-SNAPSHOT using Java 21.0.8 with PID 27548 (D:\workbuddy任务\2026-11-12-12-43-29\code\novel-study\novel-study\target\novel-study-3.5.1-SNAPSHOT.jar started by 19815 in D:\workbuddy任务\2026-11-12-12-43-29\code\novel-study\novel-study)
+2026-11-23 21:50:48,675 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-11-23 21:50:48,677 INFO (SpringApplication.java:660)- The following 1 profile is active: "dev"
+2026-11-23 21:50:52,960 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 21:50:52,970 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2026-11-23 21:50:53,024 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 41 ms. Found 0 Elasticsearch repository interfaces.
+2026-11-23 21:50:53,039 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 21:50:53,042 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2026-11-23 21:50:53,049 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 6 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2026-11-23 21:50:53,077 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 21:50:53,079 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-23 21:50:53,112 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-11-23 21:50:55,546 INFO (TomcatWebServer.java:111)- Tomcat initialized with port 8888 (http)
+2026-11-23 21:50:55,574 INFO (DirectJDKLog.java:173)- Initializing ProtocolHandler ["http-nio-8888"]
+2026-11-23 21:50:55,578 INFO (DirectJDKLog.java:173)- Starting service [Tomcat]
+2026-11-23 21:50:55,579 INFO (DirectJDKLog.java:173)- Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-11-23 21:50:55,695 INFO (DirectJDKLog.java:173)- Initializing Spring embedded WebApplicationContext
+2026-11-23 21:50:55,698 INFO (ServletWebServerApplicationContext.java:296)- Root WebApplicationContext: initialization completed in 6093 ms
+2026-11-23 21:50:57,308 INFO (Version.java:41)- Redisson 3.19.1
+2026-11-23 21:50:58,785 INFO (ConnectionPool.java:162)- 1 connections initialized for 192.168.100.128/192.168.100.128:6379
+2026-11-23 21:50:58,872 INFO (ConnectionPool.java:162)- 24 connections initialized for 192.168.100.128/192.168.100.128:6379
+2026-11-23 21:51:07,964 INFO (InitializeUserDetailsBeanManagerConfigurer.java:113)- Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-23 21:51:08,263 INFO (DefaultSecurityFilterChain.java:54)- Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1bae8e5e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@352bccf, org.springframework.security.web.context.SecurityContextHolderFilter@76b17a78, org.springframework.security.web.header.HeaderWriterFilter@29d578de, org.springframework.web.filter.CorsFilter@24a7725d, org.springframework.security.web.csrf.CsrfFilter@25af233d, org.springframework.security.web.authentication.logout.LogoutFilter@56e32a23, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4f34f451, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@62f30cea, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@70d3e710, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@45e97963, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7553ad52, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b521697, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@732d2b59, org.springframework.security.web.access.ExceptionTranslationFilter@2e7227e6, org.springframework.security.web.access.intercept.AuthorizationFilter@3b0305dd]
+2026-11-23 21:51:08,714 INFO (EndpointLinksResolver.java:60)- Exposing 2 endpoints beneath base path '/actuator'
+2026-11-23 21:51:09,025 INFO (DirectJDKLog.java:173)- Starting ProtocolHandler ["http-nio-8888"]
+2026-11-23 21:51:09,041 INFO (TomcatWebServer.java:243)- Tomcat started on port 8888 (http) with context path '/'
+2026-11-23 21:51:09,065 INFO (StartupInfoLogger.java:56)- Started NovelStudyApplication in 21.926 seconds (process running for 23.415)
+2026-11-23 21:51:09,168 INFO (HikariDataSource.java:109)- HikariPool-1 - Starting...
+2026-11-23 21:51:10,451 INFO (ConditionEvaluationReportLogger.java:82)- 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-11-23 21:51:10,467 ERROR (SpringApplication.java:859)- Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.lambda$callRunner$6(SpringApplication.java:797)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:66)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:789)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at io.github.hrz666.novelstudy.NovelStudyApplication.main(NovelStudyApplication.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:91)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:53)
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:58)
+Caused by: java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:438)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:189)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at io.github.hrz666.novelstudy.NovelStudyApplication.run(NovelStudyApplication.java:32)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:790)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	... 22 common frames omitted
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:85)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:131)
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:446)
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:215)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:133)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:935)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:805)
+	... 36 common frames omitted
+2026-11-23 21:52:25,863 INFO (Version.java:21)- HV000001: Hibernate Validator 8.0.1.Final
+2026-11-23 21:52:26,146 INFO (StartupInfoLogger.java:50)- Starting NovelStudyApplication v3.5.1-SNAPSHOT using Java 21.0.8 with PID 8760 (D:\workbuddy任务\2026-11-12-12-43-29\code\novel-study\novel-study\target\novel-study-3.5.1-SNAPSHOT.jar started by 19815 in D:\workbuddy任务\2026-11-12-12-43-29\code\novel-study\novel-study)
+2026-11-23 21:52:26,147 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-11-23 21:52:26,149 INFO (SpringApplication.java:660)- The following 1 profile is active: "dev"
+2026-11-23 21:52:31,456 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 21:52:31,464 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2026-11-23 21:52:31,533 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 55 ms. Found 0 Elasticsearch repository interfaces.
+2026-11-23 21:52:31,547 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 21:52:31,549 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2026-11-23 21:52:31,559 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 9 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2026-11-23 21:52:31,600 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 21:52:31,603 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-23 21:52:31,634 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2026-11-23 21:52:35,183 INFO (TomcatWebServer.java:111)- Tomcat initialized with port 8888 (http)
+2026-11-23 21:52:35,213 INFO (DirectJDKLog.java:173)- Initializing ProtocolHandler ["http-nio-8888"]
+2026-11-23 21:52:35,217 INFO (DirectJDKLog.java:173)- Starting service [Tomcat]
+2026-11-23 21:52:35,218 INFO (DirectJDKLog.java:173)- Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-11-23 21:52:35,344 INFO (DirectJDKLog.java:173)- Initializing Spring embedded WebApplicationContext
+2026-11-23 21:52:35,346 INFO (ServletWebServerApplicationContext.java:296)- Root WebApplicationContext: initialization completed in 8169 ms
+2026-11-23 21:52:37,863 INFO (Version.java:41)- Redisson 3.19.1
+2026-11-23 21:52:39,331 INFO (ConnectionPool.java:162)- 1 connections initialized for 192.168.100.128/192.168.100.128:6379
+2026-11-23 21:52:39,446 INFO (ConnectionPool.java:162)- 24 connections initialized for 192.168.100.128/192.168.100.128:6379
+2026-11-23 21:52:51,230 INFO (InitializeUserDetailsBeanManagerConfigurer.java:113)- Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-23 21:52:51,752 INFO (DefaultSecurityFilterChain.java:54)- Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c1e971c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@abce494, org.springframework.security.web.context.SecurityContextHolderFilter@7553ad52, org.springframework.security.web.header.HeaderWriterFilter@3746749, org.springframework.web.filter.CorsFilter@6773bab2, org.springframework.security.web.csrf.CsrfFilter@68754439, org.springframework.security.web.authentication.logout.LogoutFilter@3bb29351, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@677480c8, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4967fabe, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@65b869b4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1bae8e5e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b521697, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c304c7a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f55e1b9, org.springframework.security.web.access.ExceptionTranslationFilter@9eaaecf, org.springframework.security.web.access.intercept.AuthorizationFilter@6c3a3d87]
+2026-11-23 21:52:52,371 INFO (EndpointLinksResolver.java:60)- Exposing 2 endpoints beneath base path '/actuator'
+2026-11-23 21:52:52,780 INFO (DirectJDKLog.java:173)- Starting ProtocolHandler ["http-nio-8888"]
+2026-11-23 21:52:52,799 INFO (TomcatWebServer.java:243)- Tomcat started on port 8888 (http) with context path '/'
+2026-11-23 21:52:52,837 INFO (StartupInfoLogger.java:56)- Started NovelStudyApplication in 28.165 seconds (process running for 29.503)
+2026-11-23 21:52:53,004 INFO (HikariDataSource.java:109)- HikariPool-1 - Starting...
+2026-11-23 21:52:53,409 INFO (HikariPool.java:554)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22a9170c
+2026-11-23 21:52:53,443 INFO (HikariDataSource.java:122)- HikariPool-1 - Start completed.
+2026-11-23 21:52:53,473 INFO (NovelStudyApplication.java:36)- MySQL 连接成功，版本：8.0.46
+2026-11-23 21:52:53,573 INFO (NovelStudyApplication.java:41)- Redis 连接成功，读到：pong
+2026-11-23 22:00:32,998 INFO (Version.java:21)- HV000001: Hibernate Validator 8.0.1.Final
+2026-11-23 22:00:33,053 INFO (StartupInfoLogger.java:50)- Starting NovelStudyApplication using Java 21.0.8 with PID 44236 (D:\workbuddy任务\2026-11-12-12-43-29\code\novel-study\novel-study\target\classes started by 19815 in D:\workbuddy任务\2026-11-12-12-43-29\code\novel-study\novel-study)
+2026-11-23 22:00:33,054 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-11-23 22:00:33,054 INFO (SpringApplication.java:660)- The following 1 profile is active: "dev"
+2026-11-23 22:00:34,767 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 22:00:34,769 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2026-11-23 22:00:34,795 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 21 ms. Found 0 Elasticsearch repository interfaces.
+2026-11-23 22:00:34,799 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 22:00:34,799 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2026-11-23 22:00:34,808 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 7 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2026-11-23 22:00:34,817 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 22:00:34,817 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-23 22:00:34,834 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2026-11-23 22:00:36,191 INFO (TomcatWebServer.java:111)- Tomcat initialized with port 8888 (http)
+2026-11-23 22:00:36,207 INFO (DirectJDKLog.java:173)- Initializing ProtocolHandler ["http-nio-8888"]
+2026-11-23 22:00:36,209 INFO (DirectJDKLog.java:173)- Starting service [Tomcat]
+2026-11-23 22:00:36,209 INFO (DirectJDKLog.java:173)- Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-11-23 22:00:36,277 INFO (DirectJDKLog.java:173)- Initializing Spring embedded WebApplicationContext
+2026-11-23 22:00:36,278 INFO (ServletWebServerApplicationContext.java:296)- Root WebApplicationContext: initialization completed in 2970 ms
+2026-11-23 22:00:36,806 INFO (Version.java:41)- Redisson 3.19.1
+2026-11-23 22:00:37,134 INFO (ConnectionPool.java:162)- 1 connections initialized for 192.168.100.128/192.168.100.128:6379
+2026-11-23 22:00:37,187 INFO (ConnectionPool.java:162)- 24 connections initialized for 192.168.100.128/192.168.100.128:6379
+2026-11-23 22:00:40,540 INFO (InitializeUserDetailsBeanManagerConfigurer.java:113)- Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-23 22:00:40,662 INFO (DefaultSecurityFilterChain.java:54)- Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@608707d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28a210fb, org.springframework.security.web.context.SecurityContextHolderFilter@72eed4db, org.springframework.security.web.header.HeaderWriterFilter@50e3be0a, org.springframework.web.filter.CorsFilter@4da9da6c, org.springframework.security.web.csrf.CsrfFilter@56803e70, org.springframework.security.web.authentication.logout.LogoutFilter@6895b608, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6b00587b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5eff875a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@8cc7489, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5da5bd9e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cdfd50a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61874f5d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7553ad52, org.springframework.security.web.access.ExceptionTranslationFilter@687749d1, org.springframework.security.web.access.intercept.AuthorizationFilter@1d6c69ff]
+2026-11-23 22:00:40,902 INFO (EndpointLinksResolver.java:60)- Exposing 2 endpoints beneath base path '/actuator'
+2026-11-23 22:00:41,052 INFO (DirectJDKLog.java:173)- Starting ProtocolHandler ["http-nio-8888"]
+2026-11-23 22:00:41,060 INFO (TomcatWebServer.java:243)- Tomcat started on port 8888 (http) with context path '/'
+2026-11-23 22:00:41,072 INFO (StartupInfoLogger.java:56)- Started NovelStudyApplication in 8.627 seconds (process running for 9.373)
+2026-11-23 22:00:41,078 INFO (HikariDataSource.java:109)- HikariPool-1 - Starting...
+2026-11-23 22:00:41,230 INFO (HikariPool.java:554)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70d2a981
+2026-11-23 22:00:41,237 INFO (HikariDataSource.java:122)- HikariPool-1 - Start completed.
+2026-11-23 22:00:41,260 INFO (NovelStudyApplication.java:36)- MySQL 连接成功，版本：8.0.46
+2026-11-23 22:00:41,296 INFO (NovelStudyApplication.java:41)- Redis 连接成功，读到：pong
+2026-11-23 22:00:41,789 INFO (DirectJDKLog.java:173)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-23 22:00:41,790 INFO (FrameworkServlet.java:532)- Initializing Servlet 'dispatcherServlet'
+2026-11-23 22:00:41,793 INFO (FrameworkServlet.java:554)- Completed initialization in 3 ms
+2026-11-23 22:41:33,207 INFO (HikariDataSource.java:349)- HikariPool-1 - Shutdown initiated...
+2026-11-23 22:41:33,212 INFO (HikariDataSource.java:351)- HikariPool-1 - Shutdown completed.
+2026-11-23 22:41:38,915 INFO (Version.java:21)- HV000001: Hibernate Validator 8.0.1.Final
+2026-11-23 22:41:38,952 INFO (StartupInfoLogger.java:50)- Starting NovelStudyApplication using Java 21.0.8 with PID 2708 (D:\workbuddy任务\2026-11-12-12-43-29\code\novel-study\novel-study\target\classes started by 19815 in D:\workbuddy任务\2026-11-12-12-43-29\code\novel-study\novel-study)
+2026-11-23 22:41:38,952 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v3.3.0, Spring v6.1.8
+2026-11-23 22:41:38,953 INFO (SpringApplication.java:660)- The following 1 profile is active: "dev"
+2026-11-23 22:41:42,319 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 22:41:42,321 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2026-11-23 22:41:42,349 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 23 ms. Found 0 Elasticsearch repository interfaces.
+2026-11-23 22:41:42,353 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 22:41:42,354 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2026-11-23 22:41:42,363 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 8 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2026-11-23 22:41:42,371 INFO (RepositoryConfigurationDelegate.java:295)- Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 22:41:42,373 INFO (RepositoryConfigurationDelegate.java:143)- Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-23 22:41:42,387 INFO (RepositoryConfigurationDelegate.java:211)- Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2026-11-23 22:41:43,439 INFO (TomcatWebServer.java:111)- Tomcat initialized with port 8888 (http)
+2026-11-23 22:41:43,449 INFO (DirectJDKLog.java:173)- Initializing ProtocolHandler ["http-nio-8888"]
+2026-11-23 22:41:43,450 INFO (DirectJDKLog.java:173)- Starting service [Tomcat]
+2026-11-23 22:41:43,451 INFO (DirectJDKLog.java:173)- Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-11-23 22:41:43,489 INFO (DirectJDKLog.java:173)- Initializing Spring embedded WebApplicationContext
+2026-11-23 22:41:43,489 INFO (ServletWebServerApplicationContext.java:296)- Root WebApplicationContext: initialization completed in 4320 ms
+2026-11-23 22:41:43,912 INFO (Version.java:41)- Redisson 3.19.1
+2026-11-23 22:41:44,178 INFO (ConnectionPool.java:162)- 1 connections initialized for 192.168.100.128/192.168.100.128:6379
+2026-11-23 22:41:44,247 INFO (ConnectionPool.java:162)- 24 connections initialized for 192.168.100.128/192.168.100.128:6379
+2026-11-23 22:41:46,882 INFO (InitializeUserDetailsBeanManagerConfigurer.java:113)- Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-23 22:41:46,978 INFO (DefaultSecurityFilterChain.java:54)- Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53b1a09f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d2162c5, org.springframework.security.web.context.SecurityContextHolderFilter@4fa1bdd0, org.springframework.security.web.header.HeaderWriterFilter@23038621, org.springframework.web.filter.CorsFilter@69e8b711, org.springframework.security.web.csrf.CsrfFilter@a95807f, org.springframework.security.web.authentication.logout.LogoutFilter@1885d990, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5775485, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7c9cecfb, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@49e4b332, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@43139322, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f9bd5ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@765cb6c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@606cb314, org.springframework.security.web.access.ExceptionTranslationFilter@50b4e828, org.springframework.security.web.access.intercept.AuthorizationFilter@4b98900b]
+2026-11-23 22:41:47,192 INFO (EndpointLinksResolver.java:60)- Exposing 2 endpoints beneath base path '/actuator'
+2026-11-23 22:41:47,336 INFO (DirectJDKLog.java:173)- Starting ProtocolHandler ["http-nio-8888"]
+2026-11-23 22:41:47,342 INFO (TomcatWebServer.java:243)- Tomcat started on port 8888 (http) with context path '/'
+2026-11-23 22:41:47,352 INFO (StartupInfoLogger.java:56)- Started NovelStudyApplication in 8.925 seconds (process running for 9.693)
+2026-11-23 22:41:47,359 INFO (HikariDataSource.java:109)- HikariPool-1 - Starting...
+2026-11-23 22:41:47,493 INFO (HikariPool.java:554)- HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@561f013f
+2026-11-23 22:41:47,501 INFO (HikariDataSource.java:122)- HikariPool-1 - Start completed.
+2026-11-23 22:41:47,514 INFO (NovelStudyApplication.java:36)- MySQL 连接成功，版本：8.0.46
+2026-11-23 22:41:47,543 INFO (NovelStudyApplication.java:41)- Redis 连接成功，读到：pong
+2026-11-23 22:41:47,818 INFO (DirectJDKLog.java:173)- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-23 22:41:47,818 INFO (FrameworkServlet.java:532)- Initializing Servlet 'dispatcherServlet'
+2026-11-23 22:41:47,820 INFO (FrameworkServlet.java:554)- Completed initialization in 2 ms
+2026-11-23 22:45:42,125 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: e725fe6219950c1e
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/home/books HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:42,125 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: d037e411a3b1ea06
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/book/update_rank HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:42,125 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: fcd449fedbeb31e6
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/book/newest_rank HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:42,125 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: cb2520b5aae8e0a0
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/book/visit_rank HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:42,124 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: ba4b50c1fbed767e
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/news/latest_list HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:42,125 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: b48b34538c44fe84
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/home/friend_Link/list HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:42,131 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: b48b34538c44fe84
+Duration: 39 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:42 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:42,131 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: d037e411a3b1ea06
+Duration: 40 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:42 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:42,131 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: e725fe6219950c1e
+Duration: 40 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:42 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:42,131 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: fcd449fedbeb31e6
+Duration: 39 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:42 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:42,131 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: ba4b50c1fbed767e
+Duration: 40 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:42 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:42,131 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: cb2520b5aae8e0a0
+Duration: 40 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:42 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:56,473 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: fb6edf66f9a40745
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/home/friend_Link/list HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:56,474 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: fb6edf66f9a40745
+Duration: 5 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:56 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:56,475 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: f088a657c78cf2b2
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/home/books HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:56,475 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: bca4f73d5b84242c
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/book/update_rank HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:56,476 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: 88e23762439861b0
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/book/visit_rank HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:56,476 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: dc42f60ae7afc85c
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/book/newest_rank HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:56,476 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: f088a657c78cf2b2
+Duration: 3 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:56 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:56,476 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: 88e23762439861b0
+Duration: 8 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:56 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:56,476 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: dc42f60ae7afc85c
+Duration: 9 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:56 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:56,478 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: bca4f73d5b84242c
+Duration: 8 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:56 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:45:56,478 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: e96d8946e3239afc
+Remote: 127.0.0.1
+GET http://127.0.0.1:8888/api/front/news/latest_list HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:45:56,479 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: e96d8946e3239afc
+Duration: 6 ms
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Connection: keep-alive
+Date: Mon, 23 Nov 2026 14:45:56 GMT
+Expires: 0
+Keep-Alive: timeout=60
+Pragma: no-cache
+Transfer-Encoding: chunked
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 22:46:42,111 TRACE (DefaultHttpLogWriter.java:25)- Incoming Request: f17f99899a31821b
+Remote: 127.0.0.1
+POST http://127.0.0.1:8888/api/front/user/login HTTP/1.1
+accept: application/json, text/plain, */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: zh-CN
+authorization: XXX
+connection: keep-alive
+content-length: 51
+content-type: application/json
+host: 127.0.0.1:8888
+origin: http://localhost:1024
+referer: http://localhost:1024/
+sec-ch-ua: "Not;A=Brand";v="8", "Chromium";v="150"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+sec-fetch-storage-access: active
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.147.0 Chrome/150.0.7871.250 Electron/43.8.9 Safari/537.36
+x-requested-with: XMLHttpRequest
+2026-11-23 22:46:42,111 TRACE (DefaultHttpLogWriter.java:30)- Outgoing Response: f17f99899a31821b
+Duration: 28 ms
+HTTP/1.1 403 Forbidden
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: http://localhost:1024
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Expires: 0
+Pragma: no-cache
+Set-Cookie: JSESSIONID=296400EB2E7C9D40692831930BAEA5F6; Path=/; HttpOnly
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 0
+2026-11-23 23:26:43,025 INFO (HikariDataSource.java:349)- HikariPool-1 - Shutdown initiated...
+2026-11-23 23:26:43,028 INFO (HikariDataSource.java:351)- HikariPool-1 - Shutdown completed.
