@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### 环境配置（含密码，禁止上传）###
+application-dev.yml
+application-local.yml

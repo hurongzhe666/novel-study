@@ -1,0 +1,38 @@
+#==============================================================================
+# application-dev-template.yml —— 配置模板（值留空，不含任何真实密码）
+#
+# 用法：复制一份改名为 application-dev.yml，填入你自己的真实值。
+# application-dev.yml 已加入 .gitignore，永远不会被提交。
+#==============================================================================
+
+novel:
+  datasource:
+    url: jdbc:mysql://<你的数据库地址>:3306/<库名>?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: <数据库账号>
+    password: <数据库密码>
+
+  redis:
+    host: <Redis 地址>
+    port: 6379
+    password: <Redis 密码>
+    database: 3
+
+  # JWT 密钥：不少于 32 个字符
+  jwt-secret: <你的JWT密钥，至少32字符>
+
+  # AI 密钥（作家端 AI 扩写/缩写，可留占位值）
+  ai-api-key: sk-dummy-local-run
+
+  upload-path: <本地文件上传目录>
+
+  endpoint-admin-password: <actuator Basic 认证密码>
+
+  rabbitmq-addresses: amqp://guest:guest@localhost
+  sba-username: novel
+  sba-password: novel
+  mail-username:
+  mail-password:
+
+springdoc:
+  api-docs:
+    enabled: true
