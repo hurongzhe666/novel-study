@@ -144,5 +144,22 @@ public class BookServiceImpl implements BookService {
         return RestResp.ok(respDtoList);
     }
 
+    /**
+     * 小说章节列表查询接口
+     */
+    @Override
+    public RestResp<List<BookChapterRespDto>> listChapters(Long bookId) {
+        //根据传入的小说id查询出章节列表并且按照章节编号排序
+        QueryWrapper<BookChapter> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(DatabaseConsts.BookChapterTable.COLUMN_BOOK_ID, bookId)
+                .orderByAsc(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM);
+
+        return RestResp.ok(bookChapterMapper.selectList(queryWrapper).stream()
+                .map(v -> BookChapterRespDto.builder()
+                        .id(v.getId())
+                        .chapterName(v.getChapterName())
+                        .isVip(v.getIsVip())
+                        .build()).toList());
+    }
 
 }

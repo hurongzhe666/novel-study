@@ -3,6 +3,7 @@ package io.github.hrz666.novelstudy.controller.front;
 import io.github.hrz666.novelstudy.core.common.resp.RestResp;
 import io.github.hrz666.novelstudy.core.constant.ApiRouterConsts;
 import io.github.hrz666.novelstudy.dto.resp.BookChapterAboutRespDto;
+import io.github.hrz666.novelstudy.dto.resp.BookChapterRespDto;
 import io.github.hrz666.novelstudy.dto.resp.BookInfoRespDto;
 import io.github.hrz666.novelstudy.service.BookService;
 import io.github.hrz666.novelstudy.dto.resp.BookCategoryRespDto;
@@ -68,5 +69,14 @@ public class BookController {
     public RestResp<List<BookInfoRespDto>> listRecBooks(
             @Parameter(description = "小说ID") Long bookId) throws NoSuchAlgorithmException {
         return bookService.listRecBooks(bookId);
+    }
+
+    /**
+     * 小说章节列表查询接口
+     */
+    @Operation(summary = "小说章节列表查询接口")
+    @GetMapping("chapter/list")
+    public RestResp<List<BookChapterRespDto>> listChapters(@Parameter(description = "小说ID") Long bookId) {
+        return bookService.listChapters(bookId);
     }
 }

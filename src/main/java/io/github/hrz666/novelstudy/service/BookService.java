@@ -4,6 +4,7 @@ package io.github.hrz666.novelstudy.service;
 import io.github.hrz666.novelstudy.core.common.resp.RestResp;
 import io.github.hrz666.novelstudy.dto.resp.BookCategoryRespDto;
 import io.github.hrz666.novelstudy.dto.resp.BookChapterAboutRespDto;
+import io.github.hrz666.novelstudy.dto.resp.BookChapterRespDto;
 import io.github.hrz666.novelstudy.dto.resp.BookInfoRespDto;
 
 import java.security.NoSuchAlgorithmException;
@@ -34,4 +35,9 @@ public interface BookService {
      * 推荐小说列表查询接口
      */
     RestResp<List<BookInfoRespDto>> listRecBooks(Long bookId) throws NoSuchAlgorithmException;
+
+    /**
+     * 小说章节列表查询接口
+     */
+    RestResp<List<BookChapterRespDto>> listChapters(Long bookId);
 }
