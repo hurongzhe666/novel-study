@@ -14,6 +14,10 @@ import lombok.Data;
 @Builder
 public class BookChapterAboutRespDto {
 
+    /**
+     * 章节信息
+     */
+    @Schema(description = "章节信息")
     private BookChapterRespDto chapterInfo;
 
     /**

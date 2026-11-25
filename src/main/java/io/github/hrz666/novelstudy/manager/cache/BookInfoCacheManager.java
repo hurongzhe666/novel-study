@@ -36,6 +36,7 @@ public class BookInfoCacheManager {
     @Cacheable(cacheManager = CacheConsts.CAFFEINE_CACHE_MANAGER,
         value = CacheConsts.BOOK_INFO_CACHE_NAME)
     public BookInfoRespDto getBookInfo(Long id) {
+
         return cachePutBookInfo(id);
     }
 
