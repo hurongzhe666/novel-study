@@ -18,7 +18,7 @@ import java.util.List;
 
 @Tag(name="NewsController",description="前台门户-新闻模块")
 @RestController
-@RequestMapping(ApiRouterConsts.NEWS_URL_PREFIX)
+@RequestMapping(ApiRouterConsts.API_FRONT_NEWS_URL_PREFIX)
 @Slf4j
 @RequiredArgsConstructor
 public class NewsController {
