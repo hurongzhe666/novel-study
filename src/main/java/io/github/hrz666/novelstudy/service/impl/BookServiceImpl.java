@@ -1,19 +1,17 @@
 package io.github.hrz666.novelstudy.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import io.github.hrz666.novelstudy.core.auth.UserHolder;
+import io.github.hrz666.novelstudy.core.common.constant.ErrorCodeEnum;
+import io.github.hrz666.novelstudy.core.common.exception.BusinessException;
 import io.github.hrz666.novelstudy.core.common.resp.RestResp;
 import io.github.hrz666.novelstudy.core.constant.DatabaseConsts;
 import io.github.hrz666.novelstudy.dao.entity.BookChapter;
+import io.github.hrz666.novelstudy.dao.entity.BookInfo;
 import io.github.hrz666.novelstudy.dao.mapper.BookChapterMapper;
 import io.github.hrz666.novelstudy.dao.mapper.BookInfoMapper;
-import io.github.hrz666.novelstudy.dto.resp.BookCategoryRespDto;
-import io.github.hrz666.novelstudy.dto.resp.BookChapterAboutRespDto;
-import io.github.hrz666.novelstudy.dto.resp.BookChapterRespDto;
-import io.github.hrz666.novelstudy.dto.resp.BookInfoRespDto;
-import io.github.hrz666.novelstudy.manager.cache.BookCategoryCacheManager;
-import io.github.hrz666.novelstudy.manager.cache.BookChapterCacheManager;
-import io.github.hrz666.novelstudy.manager.cache.BookContentCacheManager;
-import io.github.hrz666.novelstudy.manager.cache.BookInfoCacheManager;
+import io.github.hrz666.novelstudy.dto.resp.*;
+import io.github.hrz666.novelstudy.manager.cache.*;
 import io.github.hrz666.novelstudy.service.BookService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +32,7 @@ public class BookServiceImpl implements BookService {
     private final BookChapterCacheManager bookChapterCacheManager;
     private final BookContentCacheManager bookContentCacheManager;
     private final BookChapterMapper bookChapterMapper;
+    private final BookRankCacheManager bookRankCacheManager;
 
 
     // 推荐小说数量
@@ -160,6 +159,103 @@ public class BookServiceImpl implements BookService {
                         .chapterName(v.getChapterName())
                         .isVip(v.getIsVip())
                         .build()).toList());
+    }
+
+    /**
+     * 小说章节内容查询接口
+     */
+    @Override
+    public RestResp<BookContentAboutRespDto> getBookContentAbout(Long chapterId) {
+        log.debug("userId:{}", UserHolder.getUserId());
+        // 查询章节信息
+        BookChapterRespDto bookChapter = bookChapterCacheManager.getChapter(chapterId);
+
+        /* VIP 章节需要校验当前用户是否已购买该章节，未登录或未购买均不允许查看章节内容
+        if (Objects.equals(bookChapter.getIsVip(), DatabaseConsts.BookChapterTable.VIP_CHAPTER_YES)) {
+            Long userId = UserHolder.getUserId();
+            if (Objects.isNull(userId) || !hasPurchasedChapter(userId, chapterId)) {
+                throw new BusinessException(ErrorCodeEnum.USER_UN_AUTH);
+            }
+        }
+
+         */
+
+        // 查询章节内容
+        String content = bookContentCacheManager.getBookContent(chapterId);
+
+        // 查询小说信息
+        BookInfoRespDto bookInfo = bookInfoCacheManager.getBookInfo(bookChapter.getBookId());
+
+        // 组装数据并返回
+        return RestResp.ok(BookContentAboutRespDto.builder()
+                .bookInfo(bookInfo)
+                .chapterInfo(bookChapter)
+                .bookContent(content)
+                .build());
+    }
+
+    @Override
+    public RestResp<Long> getPreChapterId(Long chapterId) {
+        // 查询小说ID 和 章节号
+        BookChapterRespDto chapter = bookChapterCacheManager.getChapter(chapterId);
+        Long bookId = chapter.getBookId();
+        Integer chapterNum = chapter.getChapterNum();
+
+        // 查询上一章信息并返回章节ID
+        QueryWrapper<BookChapter> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(DatabaseConsts.BookChapterTable.COLUMN_BOOK_ID, bookId)
+                .lt(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM, chapterNum)
+                .orderByDesc(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM)
+                .last(DatabaseConsts.SqlEnum.LIMIT_1.getSql());
+        return RestResp.ok(
+                Optional.ofNullable(bookChapterMapper.selectOne(queryWrapper))
+                        .map(BookChapter::getId)
+                        .orElse(null)
+        );
+    }
+
+    @Override
+    public RestResp<Long> getNextChapterId(Long chapterId) {
+        // 查询小说ID 和 章节号
+        BookChapterRespDto chapter = bookChapterCacheManager.getChapter(chapterId);
+        Long bookId = chapter.getBookId();
+        Integer chapterNum = chapter.getChapterNum();
+
+        // 查询下一章信息并返回章节ID
+        QueryWrapper<BookChapter> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(DatabaseConsts.BookChapterTable.COLUMN_BOOK_ID, bookId)
+                .gt(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM, chapterNum)
+                .orderByAsc(DatabaseConsts.BookChapterTable.COLUMN_CHAPTER_NUM)
+                .last(DatabaseConsts.SqlEnum.LIMIT_1.getSql());
+        return RestResp.ok(
+                Optional.ofNullable(bookChapterMapper.selectOne(queryWrapper))
+                        .map(BookChapter::getId)
+                        .orElse(null)
+        );
+    }
+
+    /**
+     * 获取访问量排行榜小说列表查询接口
+     */
+    @Override
+    public RestResp<List<BookRankRespDto>> listVisitRankBooks() {
+        return RestResp.ok(bookRankCacheManager.listVisitRankBooks());
+    }
+
+    /**
+     * 获取最新上传排行榜小说列表查询接口
+     */
+    @Override
+    public RestResp<List<BookRankRespDto>> listNewestRankBooks() {
+        return RestResp.ok(bookRankCacheManager.listNewestRankBooks());
+    }
+
+    /**
+     * 获取最新上传排行榜小说列表查询接口
+     */
+    @Override
+    public RestResp<List<BookRankRespDto>> listUpdateRankBooks() {
+        return RestResp.ok(bookRankCacheManager.listUpdateRankBooks());
     }
 
 }

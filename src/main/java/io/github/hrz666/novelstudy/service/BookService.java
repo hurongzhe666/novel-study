@@ -2,10 +2,7 @@ package io.github.hrz666.novelstudy.service;
 
 
 import io.github.hrz666.novelstudy.core.common.resp.RestResp;
-import io.github.hrz666.novelstudy.dto.resp.BookCategoryRespDto;
-import io.github.hrz666.novelstudy.dto.resp.BookChapterAboutRespDto;
-import io.github.hrz666.novelstudy.dto.resp.BookChapterRespDto;
-import io.github.hrz666.novelstudy.dto.resp.BookInfoRespDto;
+import io.github.hrz666.novelstudy.dto.resp.*;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -40,4 +37,37 @@ public interface BookService {
      * 小说章节列表查询接口
      */
     RestResp<List<BookChapterRespDto>> listChapters(Long bookId);
+
+    /**
+     * 小说内容查询接口
+     */
+    RestResp<BookContentAboutRespDto> getBookContentAbout(Long chapterId);
+
+
+    /**
+     * 获取上一章ID
+     */
+    RestResp<Long> getPreChapterId(Long chapterId);
+
+    /**
+     * 获取下一章ID
+     */
+    RestResp<Long> getNextChapterId(Long chapterId);
+
+    /**
+     * 获取小说访问排名列表
+     */
+    RestResp<List<BookRankRespDto>> listVisitRankBooks();
+
+
+    /**
+     * 获取小说最新上传列表
+     */
+    RestResp<List<BookRankRespDto>> listNewestRankBooks();
+
+
+    /**
+     * 获取小说更新排名列表
+     */
+    RestResp<List<BookRankRespDto>> listUpdateRankBooks();
 }

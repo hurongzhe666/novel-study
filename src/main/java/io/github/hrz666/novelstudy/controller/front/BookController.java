@@ -2,11 +2,8 @@ package io.github.hrz666.novelstudy.controller.front;
 
 import io.github.hrz666.novelstudy.core.common.resp.RestResp;
 import io.github.hrz666.novelstudy.core.constant.ApiRouterConsts;
-import io.github.hrz666.novelstudy.dto.resp.BookChapterAboutRespDto;
-import io.github.hrz666.novelstudy.dto.resp.BookChapterRespDto;
-import io.github.hrz666.novelstudy.dto.resp.BookInfoRespDto;
+import io.github.hrz666.novelstudy.dto.resp.*;
 import io.github.hrz666.novelstudy.service.BookService;
-import io.github.hrz666.novelstudy.dto.resp.BookCategoryRespDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -78,5 +75,62 @@ public class BookController {
     @GetMapping("chapter/list")
     public RestResp<List<BookChapterRespDto>> listChapters(@Parameter(description = "小说ID") Long bookId) {
         return bookService.listChapters(bookId);
+    }
+
+    /**
+     * 小说内容相关信息查询接口
+     */
+    @Operation(summary = "小说内容相关信息查询接口")
+    @GetMapping("content/{chapterId}")
+    public RestResp<BookContentAboutRespDto> getBookContentAbout(
+            @Parameter(description = "章节ID") @PathVariable("chapterId") Long chapterId) {
+        return bookService.getBookContentAbout(chapterId);
+    }
+
+    /**
+     * 获取上一章节ID接口
+     */
+    @Operation(summary = "获取上一章节ID接口")
+    @GetMapping("pre_chapter_id/{chapterId}")
+    public RestResp<Long> getPreChapterId(
+            @Parameter(description = "章节ID") @PathVariable("chapterId") Long chapterId) {
+        return bookService.getPreChapterId(chapterId);
+    }
+
+    /**
+     * 获取下一章节ID接口
+     */
+    @Operation(summary = "获取下一章节ID接口")
+    @GetMapping("next_chapter_id/{chapterId}")
+    public RestResp<Long> getNextChapterId(
+            @Parameter(description = "章节ID") @PathVariable("chapterId") Long chapterId) {
+        return bookService.getNextChapterId(chapterId);
+    }
+
+    /**
+     * 小说点击榜查询接口
+     */
+    @Operation(summary = "小说点击榜查询接口")
+    @GetMapping("visit_rank")
+    public RestResp<List<BookRankRespDto>> listVisitRankBooks() {
+        return bookService.listVisitRankBooks();
+    }
+
+    /**
+     * 小说新书榜查询接口
+     */
+    @Operation(summary = "小说新书榜查询接口")
+    @GetMapping("newest_rank")
+    public RestResp<List<BookRankRespDto>> listNewestRankBooks() {
+        return bookService.listNewestRankBooks();
+    }
+
+    /**
+     * 小说更新榜查询接口
+     */
+    @Operation(summary = "小说更新榜查询接口")
+    @GetMapping("update_rank")
+    public RestResp<List<BookRankRespDto>> listUpdateRankBooks() {
+        return bookService.listUpdateRankBooks();
     }
 }

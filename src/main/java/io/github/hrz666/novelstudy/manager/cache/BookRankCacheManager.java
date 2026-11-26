@@ -30,8 +30,10 @@ public class BookRankCacheManager {
     @Cacheable(cacheManager = CacheConsts.REDIS_CACHE_MANAGER,
         value = CacheConsts.BOOK_VISIT_RANK_CACHE_NAME)
     public List<BookRankRespDto> listVisitRankBooks() {
+        //根据bookinfo表查询所有书的点击量按照倒序排序
         QueryWrapper<BookInfo> bookInfoQueryWrapper = new QueryWrapper<>();
         bookInfoQueryWrapper.orderByDesc(DatabaseConsts.BookTable.COLUMN_VISIT_COUNT);
+        //调用遍历的方法
         return listRankBooks(bookInfoQueryWrapper);
     }
 
@@ -63,8 +65,8 @@ public class BookRankCacheManager {
 
     private List<BookRankRespDto> listRankBooks(QueryWrapper<BookInfo> bookInfoQueryWrapper) {
         bookInfoQueryWrapper
-            .gt(DatabaseConsts.BookTable.COLUMN_WORD_COUNT, 0)
-            .last(DatabaseConsts.SqlEnum.LIMIT_30.getSql());
+            .gt(DatabaseConsts.BookTable.COLUMN_WORD_COUNT, 0)  //只统计有字数的小说
+            .last(DatabaseConsts.SqlEnum.LIMIT_30.getSql());  //限制查询30条数据
         return bookInfoMapper.selectList(bookInfoQueryWrapper).stream().map(v -> {
             BookRankRespDto respDto = new BookRankRespDto();
             respDto.setId(v.getId());
