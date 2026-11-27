@@ -26,6 +26,7 @@ public class BookRankCacheManager {
 
     /**
      * 查询小说点击榜列表，并放入缓存中
+     * 点击榜变化快，所以使用redis进行缓存
      */
     @Cacheable(cacheManager = CacheConsts.REDIS_CACHE_MANAGER,
         value = CacheConsts.BOOK_VISIT_RANK_CACHE_NAME)
@@ -39,6 +40,7 @@ public class BookRankCacheManager {
 
     /**
      * 查询小说新书榜列表，并放入缓存中
+     * 新书榜变化慢，所以使用caffeine进行缓存
      */
     @Cacheable(cacheManager = CacheConsts.CAFFEINE_CACHE_MANAGER,
         value = CacheConsts.BOOK_NEWEST_RANK_CACHE_NAME)
@@ -52,6 +54,7 @@ public class BookRankCacheManager {
 
     /**
      * 查询小说更新榜列表，并放入缓存中
+     * 更新榜变化慢，所以使用caffeine进行缓存
      */
     @Cacheable(cacheManager = CacheConsts.CAFFEINE_CACHE_MANAGER,
         value = CacheConsts.BOOK_UPDATE_RANK_CACHE_NAME)

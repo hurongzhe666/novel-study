@@ -33,6 +33,10 @@ public interface BookInfoMapper extends BaseMapper<BookInfo> {
      * @param condition 搜索条件
      * @return 返回结果
      * */
-    List<BookInfo> searchBooks(IPage<BookInfoRespDto> page, @ValidateSortOrder BookSearchReqDto condition);
+
+    // @ValidateSortOrder白名单注解
+    List<BookInfo> searchBooks(IPage<BookInfoRespDto> page,
+                               @ValidateSortOrder @Param("condition") BookSearchReqDto condition);
+
 
 }
