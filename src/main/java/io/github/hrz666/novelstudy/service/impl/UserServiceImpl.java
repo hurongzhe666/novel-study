@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService {
 
     private final JwtUtils jwtUtils;
 
+    //调用此方法将密码加密
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     /**
@@ -63,12 +64,48 @@ public class UserServiceImpl implements UserService {
     /**
      * 注册
      */
-    public RestResp<UserRegisterRespDto> register(UserRegisterRespDto userRegisterRespDto) {
+    @Override
+    public RestResp<UserRegisterRespDto> register(UserRegisterReqDto dto) {
+        // 校验图形验证码是否正确
+        if (!verifyCodeManager.imgVerifyCodeOk(dto.getSessionId(), dto.getVelCode())) {
+            // 图形验证码校验失败
+            throw new BusinessException(ErrorCodeEnum.USER_VERIFY_CODE_ERROR);
+        }
+
+        // 校验手机号是否已注册
+        QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq(DatabaseConsts.UserInfoTable.COLUMN_USERNAME, dto.getUsername())
+                .last(DatabaseConsts.SqlEnum.LIMIT_1.getSql());
+        if (userInfoMapper.selectCount(queryWrapper) > 0) {
+            // 手机号已注册
+            throw new BusinessException(ErrorCodeEnum.USER_NAME_EXIST);
+        }
+
+        // 注册成功，保存用户信息
         UserInfo userInfo = new UserInfo();
-        return RestResp.ok(UserRegisterRespDto.builder()
-                .uid(userInfo.getId())
-                .token("token").build());
+        userInfo.setPassword(passwordEncoder.encode(dto.getPassword()));
+        userInfo.setUsername(dto.getUsername());
+        userInfo.setNickName(dto.getUsername());
+        userInfo.setCreateTime(LocalDateTime.now());
+        userInfo.setUpdateTime(LocalDateTime.now());
+        // salt 列为历史遗留字段，已不参与密码哈希计算（BCrypt 自带随机盐），
+        // 这里仅为满足数据库 NOT NULL 约束而写入占位值
+        userInfo.setSalt("0");
+        userInfoMapper.insert(userInfo);
+
+        // 删除验证码
+        verifyCodeManager.removeImgVerifyCode(dto.getSessionId());
+
+        // 生成JWT 并返回
+        return RestResp.ok(
+                UserRegisterRespDto.builder()
+                        .token(jwtUtils.generateToken(userInfo.getId(), SystemConfigConsts.NOVEL_FRONT_KEY))
+                        .uid(userInfo.getId())
+                        .build()
+        );
+
     }
+
 
 
     /**

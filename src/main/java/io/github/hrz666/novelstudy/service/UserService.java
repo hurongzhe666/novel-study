@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import io.github.hrz666.novelstudy.core.common.resp.RestResp;
 import io.github.hrz666.novelstudy.dao.entity.UserInfo;
 import io.github.hrz666.novelstudy.dto.req.UserLoginReqDto;
+import io.github.hrz666.novelstudy.dto.req.UserRegisterReqDto;
 import io.github.hrz666.novelstudy.dto.resp.UserLoginRespDto;
 import io.github.hrz666.novelstudy.dto.resp.UserRegisterRespDto;
 import org.springframework.stereotype.Service;
@@ -20,8 +21,8 @@ public interface UserService{
 
     /**
      * 用户注册
-     * @param userRegisterRespDto
+     * @param userRegisterReqDto
      * @return
      */
-    RestResp<UserRegisterRespDto> register(UserRegisterRespDto userRegisterRespDto);
+    RestResp<UserRegisterRespDto> register(UserRegisterReqDto userRegisterReqDto);
 }

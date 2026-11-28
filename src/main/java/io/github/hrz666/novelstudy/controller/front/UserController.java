@@ -6,6 +6,7 @@ import io.github.hrz666.novelstudy.core.constant.ApiRouterConsts;
 import io.github.hrz666.novelstudy.core.constant.SystemConfigConsts;
 import io.github.hrz666.novelstudy.dto.UserInfoDto;
 import io.github.hrz666.novelstudy.dto.req.UserLoginReqDto;
+import io.github.hrz666.novelstudy.dto.req.UserRegisterReqDto;
 import io.github.hrz666.novelstudy.dto.resp.UserLoginRespDto;
 import io.github.hrz666.novelstudy.dto.resp.UserRegisterRespDto;
 import io.github.hrz666.novelstudy.service.UserService;
@@ -36,14 +37,14 @@ public class UserController {
 
     /**
      * 用户注册
-     * @param userRegisterRespDto
+     * @param userRegisterReqDto
      * @return
      */
     @Operation(summary = "用户注册接口")
     @PostMapping("register") //@Valid 让 DTO 字段上写好的校验规则真正生效。
-    public RestResp<UserRegisterRespDto> register(@Valid @RequestBody UserRegisterRespDto userRegisterRespDto){
-        log.info("用户注册: {}", userRegisterRespDto);
-        return userService.register(userRegisterRespDto);
+    public RestResp<UserRegisterRespDto> register(@Valid @RequestBody UserRegisterReqDto userRegisterReqDto){
+        log.info("用户注册: {}", userRegisterReqDto);
+        return userService.register(userRegisterReqDto);
     }
 
     /**
